@@ -23,9 +23,9 @@ db = client.pytech
 #also weird that the O is capital??? but it matches so...
 print("--Pytech COllection List--")
 print(db.list_collection_names())
-
+print()
 # needs an end
-input("End of program, press any key to exit...")
+input("\n End of program, press any key to exit...")
 
 
 
