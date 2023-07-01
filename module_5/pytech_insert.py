@@ -1,3 +1,11 @@
+
+# pytech_insert
+# Heather Larnach
+# 29 June 2023
+# CYBR 410
+
+
+
 # importing my mongodb
 from pymongo.mongo_client import MongoClient
 
@@ -27,6 +35,7 @@ bilbo= {
     "last_name": "Baggins"
 }
 bilbo_student_id = students.insert_one(bilbo).inserted_id
+
 
 frodo= {
     "student_id": "1009",
