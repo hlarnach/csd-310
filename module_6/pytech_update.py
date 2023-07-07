@@ -17,11 +17,9 @@ client = MongoClient(url)
 #connecting to my db
 db = client.pytech
 
-# connecting to collection for student documents
-students = db.students
 
 #using find() to get all 
-docs = students.find({})
+docs = db.students.find({})
 
 # output for find()
 print("--DISPLAYING STUDENTS DOCUMENTS FROM find() QUERY--")
@@ -33,11 +31,11 @@ for doc in docs:
 
 
 # using update_one to change last name entry for student 1007
-result= students.update_one({"student_id": 1007}, {"$set": {"last_name": "Oakenshield, son of Thrain "}})
+result = db.students.update_one({"student_id": "1007"}, {"$set": {"last_name": "Oakenshield, son of Thrain"}})
 
 
 # using find.one() to get single 
-student = students.find_one({"student_id": "1007"})
+student = db.students.find_one({"student_id": "1007"})
 
 
 #output for updated
