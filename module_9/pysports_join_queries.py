@@ -1,8 +1,8 @@
 """ 
-    Title: pysports-queries.py
+    Title: pysports_join_queries.py
     Author: Heather Larnach
-    Date: July 20, 2023
-    Description: queries for pysports
+    Date: July 25, 2023
+    Description: join for pysports
 """
 
 
