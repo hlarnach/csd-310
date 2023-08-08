@@ -5,6 +5,13 @@
     Description: Whatabook init script.
 */
 
+CREATE database whatabook;
+
+show databases;
+
+USE whatabook;
+
+
 -- drop test user incase present
 DROP USER IF EXISTS 'whatabook_user'@'localhost';
 
