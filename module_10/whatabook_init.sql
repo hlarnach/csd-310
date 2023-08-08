@@ -6,6 +6,8 @@
 */
 
 --creating and naming database
+DROP database whatabook;
+
 CREATE database whatabook;
 
 show databases;
