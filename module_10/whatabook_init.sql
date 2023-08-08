@@ -5,6 +5,7 @@
     Description: Whatabook init script.
 */
 
+--creating and naming database
 CREATE database whatabook;
 
 show databases;
@@ -17,7 +18,7 @@ DROP USER IF EXISTS 'whatabook_user'@'localhost';
 
 -- create a new whatabook_user 
 CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySQL8IsGreat!'; 
-GRANT ALL PRIVILEGES ON whatabook.* TO'whatabook_user'@'localhost';
+GRANT ALL PRIVILEGES ON whatabook.* TO 'whatabook_user'@'localhost';
 
 -- drop constraints if present
 ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
