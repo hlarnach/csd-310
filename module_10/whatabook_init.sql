@@ -21,9 +21,6 @@ DROP USER if EXISTS 'whatabook_user'@'localhost';
 CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySQL8IsGreat!'; 
 GRANT ALL PRIVILEGES ON whatabook.* TO 'whatabook_user'@'localhost';
 
--- drop constraints if present
-ALTER TABLE wishlist DROP FOREIGN KEY fk_book;
-ALTER TABLE wishlist DROP FOREIGN KEY fk_user;
 
 /*drop tables if present*/
 DROP TABLE IF EXISTS store;
@@ -41,7 +38,7 @@ CREATE TABLE user (
     PRIMARY KEY(user_id) 
 );
 
---create book table:
+/*create book table*/
 CREATE TABLE book (
     book_id     INT             NOT NULL    AUTO_INCREMENT,
     book_name   VARCHAR(200)    NOT NULL,
@@ -51,7 +48,7 @@ CREATE TABLE book (
 );
 
 
---create wishlist table:
+/*create wishlist table*/
 CREATE TABLE wishlist (
     wishlist_id     INT         NOT NULL    AUTO_INCREMENT,
     user_id         INT         NOT NULL,
@@ -73,12 +70,12 @@ CREATE TABLE store (
 );
 
 
---store info:
+/*store info*/
 INSERT INTO store(locale)
     VALUES('123 Bookstore Lane Page, AZ 86036');
 
 
---insert 9 books: 
+/*insert 9 books*/
 INSERT INTO book(book_name, author, details)
     VALUES('Fantastic Beasts and Where to Find Them', 'Newt Scamander', 'The essential guide to magical beasts by the renowned magizoologist');
 
@@ -106,7 +103,7 @@ INSERT INTO book(book_name, author, details)
 INSERT INTO book(book_name, author, details)
     VALUES('The Tales of Beedle the Bard', 'Beedle the Bard', 'A collection of popular childrens bedtime stories');
 
---insert 3 users
+/*insert 3 users*/
 INSERT INTO user(first_name, last_name) 
     VALUES('Harry', 'Potter');
 
@@ -117,7 +114,7 @@ INSERT INTO user(first_name, last_name)
     VALUES('Ronald', 'Weasley');
 
 
---insert 3 wishlists for users:
+/*insert 3 wishlists for users*/
 INSERT INTO wishlist(user_id, book_id) 
     VALUES (
         (SELECT user_id FROM user WHERE first_name = 'Harry'), 
