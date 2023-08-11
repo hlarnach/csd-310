@@ -21,7 +21,7 @@ config = {
 
 def show_menu():
     print("\n     Main Menu ")
-
+    print("     ---------")
     print("    1. View Books")   
     print("    2. View Store Locations")
     print("    3. My Account")
@@ -43,7 +43,7 @@ def show_books(_cursor):
     books = _cursor.fetchall()
 
     print("\n     AVAILABLE BOOKS")
-    
+    print("     ---------------")
     # how to display the results 
     for book in books:
         print("  Book Name: {}\n  Author: {}\n  Details: {}\n".format(book[0], book[1], book[2]))
@@ -54,9 +54,9 @@ def show_locations(_cursor):
     locations = _cursor.fetchall()
 
     print("\n     DISPLAYING STORE LOCATIONS")
-
+    print("     --------------------------")
     for location in locations:
-        print("  Visit your local Whatabook!: {}\n".format(location[1]))
+        print("  Visit your local Whatabook!:  {}\n".format(location[1]))
 
 
 # making sure the account number is valid
@@ -80,6 +80,7 @@ def show_account_menu():
 
     try:
         print("\n      Customer Menu")
+        print("      -------------")
         print("        1. Wishlist")
         print("        2. Add Book")
         print("        3. Main Menu")
@@ -103,6 +104,7 @@ def show_wishlist(_cursor, _user_id):
     wishlist = _cursor.fetchall()
 
     print("\n          DISPLAYING WISHLIST ITEMS ")
+    print("          -------------------------")
 
     for book in wishlist:
         print("        Book Name: {}\n        Author: {}\n".format(book[4], book[5]))
@@ -114,13 +116,12 @@ def show_books_to_add(_cursor, _user_id):
             "FROM book "
             "WHERE book_id NOT IN (SELECT book_id FROM wishlist WHERE user_id = {})".format(_user_id))
 
-    print(query)
-
     _cursor.execute(query)
 
     books_to_add = _cursor.fetchall()
 
     print("\n                AVAILABLE BOOKS")
+    print("                ---------------")
 
     for book in books_to_add:
         print("        Book Id: {}\n        Book Name: {}\n".format(book[0], book[1]))
