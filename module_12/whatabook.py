@@ -186,7 +186,7 @@ try:
         
         # if the user selection is < 0 or > 4, display an invalid selection message
         if user_selection < 0 or user_selection > 4:
-            print("\n      Invalid selection, please try again using one of the options above...")
+            print("\n      Invalid selection, please try again using one of the menu options...")
             
         # show the main menu
         user_selection = show_menu()
