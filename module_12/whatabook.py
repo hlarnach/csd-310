@@ -56,7 +56,7 @@ def show_locations(_cursor):
     print("\n     DISPLAYING STORE LOCATIONS")
 
     for location in locations:
-        print("  Locale: {}\n".format(location[1]))
+        print("  Visit your local Whatabook!: {}\n".format(location[1]))
 
 
 # making sure the account number is valid
